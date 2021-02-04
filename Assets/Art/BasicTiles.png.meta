@@ -77,6 +77,18 @@ TextureImporter:
   - first:
       213: -8921673464100214826
     second: BasicTiles_36
+  - first:
+      213: -4273529792495010520
+    second: BasicTiles_4
+  - first:
+      213: -1493038408913460684
+    second: BasicTiles_9
+  - first:
+      213: -4305024309820194753
+    second: BasicTiles_14
+  - first:
+      213: 7978842053186017467
+    second: BasicTiles_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -758,6 +770,90 @@ TextureImporter:
       bones: []
       spriteID: 6d72742e049df2480800000000000000
       internalID: -8921673464100214826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicTiles_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82d394dbb4f51b4c0800000000000000
+      internalID: -4273529792495010520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicTiles_9
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 94
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 432e2b04a79a74be0800000000000000
+      internalID: -1493038408913460684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicTiles_14
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f300fbff23b7144c0800000000000000
+      internalID: -4305024309820194753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicTiles_19
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8d91bd29a8abe60800000000000000
+      internalID: 7978842053186017467
       vertices: []
       indices: 
       edges: []
