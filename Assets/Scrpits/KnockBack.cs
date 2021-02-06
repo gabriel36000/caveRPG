@@ -6,6 +6,7 @@ public class KnockBack : MonoBehaviour
 {
     public float thrust;
     public float knockTime;
+    public float damage;
     
     // Start is called before the first frame update
     void Start()
@@ -28,9 +29,9 @@ public class KnockBack : MonoBehaviour
                 Vector2 difference = hit.transform.position - transform.position;
                 difference = difference.normalized * thrust;
                 hit.AddForce(difference, ForceMode2D.Impulse);
-                if (col.gameObject.CompareTag("enemy")) {
+                if (col.gameObject.CompareTag("enemy") && col.isTrigger) {
                     hit.GetComponent<Enemy>().currentState = EnemyState.stagger;
-                    col.GetComponent<Enemy>().Knock(hit, knockTime);
+                    col.GetComponent<Enemy>().Knock(hit, knockTime, damage);
                 }
                 if (col.gameObject.CompareTag("Player")) {
                     hit.GetComponent<PlayerMovement>().currentState = PlayerState.stagger;
