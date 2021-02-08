@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     public FloatValue currentHealth;
     public Signal playerHealthSignal;
+    public inventory inventory;
+    public SpriteRenderer receivedItemSprite;
    
 
     // Start is called before the first frame update
@@ -33,31 +35,46 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
-    {
+    
+
+    void FixedUpdate() {
+        if (currentState == PlayerState.interact) {
+            return;
+        }
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-
-       
-
-        if(currentState == PlayerState.walk || currentState != PlayerState.idle) {
-            UpdateAnimationAndMove();
-        }  
-    }
-
-    void Update() {
-        if (Input.GetButtonDown("attack") && currentState != PlayerState.attack && currentState != PlayerState.stagger) {
+         if (Input.GetButtonDown("attack") && currentState != PlayerState.attack && currentState != PlayerState.stagger) {
             StartCoroutine(AttackCo());
+         }
+        else if (currentState == PlayerState.walk || currentState == PlayerState.idle) {
+            UpdateAnimationAndMove();
+        
         }
-    }
+}
     private IEnumerator AttackCo() {
         animator.SetBool("attacking", true);
         currentState = PlayerState.attack;
         yield return null;
         animator.SetBool("attacking", false);
-        yield return new WaitForSeconds(.33f);
-        currentState = PlayerState.walk;
+        yield return new WaitForSeconds(.10f);
+        if(currentState != PlayerState.interact) {
+            currentState = PlayerState.walk;
+        }
+    }
+    public void RaiseItem() {
+        if(inventory.currentItem != null) {
+            if(currentState != PlayerState.interact) {
+            //animator.SetBool("", true);
+            currentState = PlayerState.interact;
+            receivedItemSprite.sprite = inventory.currentItem.itemSprite;
+            }
+        else {
+            currentState = PlayerState.idle;
+            receivedItemSprite.sprite = null;
+            inventory.currentItem = null;
+            }
+        }
     }
     void UpdateAnimationAndMove() {
         if (change != Vector3.zero) {

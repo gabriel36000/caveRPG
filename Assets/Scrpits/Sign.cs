@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Sign : MonoBehaviour
+public class Sign : Interactable
 {
+    
     public GameObject dialogBox;
     public TextMeshProUGUI dialogText;
     public string dialog;
-    public bool playerInRange;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -29,14 +30,10 @@ public class Sign : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter2D(Collider2D col) {
-        if (col.CompareTag("Player")) {
-            playerInRange = true;
-
-        }
-    }
+ 
     private void OnTriggerExit2D(Collider2D col) {
-        if (col.CompareTag("Player")) {
+        if (col.CompareTag("Player") && !col.isTrigger) {
+            context.Raise();
             playerInRange = false;
             dialogBox.SetActive(false);
         }

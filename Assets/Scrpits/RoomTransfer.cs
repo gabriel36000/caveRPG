@@ -25,7 +25,7 @@ public class RoomTransfer : MonoBehaviour
         
     }
      void OnTriggerEnter2D(Collider2D col) {
-        if (col.CompareTag("Player")) {
+        if (col.CompareTag("Player") && !col.isTrigger) {
             cam.minPosition += cameraChange;
             cam.maxPosition += cameraChange;
             col.transform.position +=  playerChange;
