@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Slime : Enemy
 {
-    private Rigidbody2D myRigidbody;
+    public Rigidbody2D myRigidbody;
     public Transform target;
     public float chaseRadius;
     public float attackRadius;
@@ -17,6 +17,7 @@ public class Slime : Enemy
         myRigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").transform;
+        anim.SetBool("wakeUp", true);
 
     }
 
@@ -26,7 +27,7 @@ public class Slime : Enemy
         CheckDistance();
 
     }
-    void CheckDistance() {
+    public virtual void CheckDistance() {
         if (Vector3.Distance(target.position,
                             transform.position) <= chaseRadius
         && Vector3.Distance(target.position,
@@ -46,17 +47,17 @@ public class Slime : Enemy
             anim.SetBool("wakeUp", false);
         }
     }
-    private void changeAnim(Vector2 direction) {
+    public void changeAnim(Vector2 direction) {
         direction = direction.normalized;
         anim.SetFloat("moveX", direction.x);
         anim.SetFloat("moveY", direction.y);
     }
-    private void ChangeState(EnemyState newState) {
+    public void ChangeState(EnemyState newState) {
         if(currentState != newState) {
             currentState = newState;
         }
     }
-    private void SetAnimFloat(Vector2 setVector) {
+    public void SetAnimFloat(Vector2 setVector) {
         anim.SetFloat("moveX", setVector.x);
         anim.SetFloat("moveY", setVector.y);
     }

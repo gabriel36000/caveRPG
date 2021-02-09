@@ -62,6 +62,15 @@ TextureImporter:
   - first:
       213: -8549767065332122373
     second: WorldItems_6
+  - first:
+      213: -181623280236669385
+    second: WorldItems_10
+  - first:
+      213: -1030689215530957921
+    second: WorldItems_11
+  - first:
+      213: -8054884703745870847
+    second: WorldItems_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -659,6 +668,69 @@ TextureImporter:
       bones: []
       spriteID: a9b3f3e4428249990800000000000000
       internalID: -7380229752956699750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldItems_10
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 99
+        width: 23
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7365d82c69eba7df0800000000000000
+      internalID: -181623280236669385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldItems_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 59
+        width: 27
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f93837a8e9142b1f0800000000000000
+      internalID: -1030689215530957921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldItems_12
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 31
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 104ff7ed90d473090800000000000000
+      internalID: -8054884703745870847
       vertices: []
       indices: 
       edges: []
