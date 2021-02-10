@@ -172,6 +172,9 @@ MonoBehaviour:
   enemyName: Slime
   baseAttack: 1
   moveSpeed: 2
+  deathEffect: {fileID: 694554087568753267, guid: d0a6082fd5e614e458b509b612e621e6,
+    type: 3}
+  myRigidbody: {fileID: 1662606002421882394}
   target: {fileID: 0}
   chaseRadius: 4
   attackRadius: 1

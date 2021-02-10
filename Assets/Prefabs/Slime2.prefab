@@ -198,6 +198,8 @@ MonoBehaviour:
   enemyName: PatrolSlime
   baseAttack: 2
   moveSpeed: 2
+  deathEffect: {fileID: 694554087568753267, guid: d0a6082fd5e614e458b509b612e621e6,
+    type: 3}
   myRigidbody: {fileID: 3219087682567775696}
   target: {fileID: 0}
   chaseRadius: 3

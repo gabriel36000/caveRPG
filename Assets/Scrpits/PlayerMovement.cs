@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public Signal playerHealthSignal;
     public inventory inventory;
     public SpriteRenderer receivedItemSprite;
+    public bool updateAnimationAndMove;
    
 
     // Start is called before the first frame update
@@ -38,21 +39,28 @@ public class PlayerMovement : MonoBehaviour
     
 
     void FixedUpdate() {
+       if (updateAnimationAndMove) {
+            UpdateAnimationAndMove();
+            updateAnimationAndMove = false;
+        }
+}
+    void Update() {
         if (currentState == PlayerState.interact) {
             return;
         }
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-         if (Input.GetButtonDown("attack") && currentState != PlayerState.attack && currentState != PlayerState.stagger) {
+        if (Input.GetButtonDown("attack") && currentState != PlayerState.attack && currentState != PlayerState.stagger) {
             StartCoroutine(AttackCo());
-         }
-        else if (currentState == PlayerState.walk || currentState == PlayerState.idle) {
-            UpdateAnimationAndMove();
-        
         }
-}
-    private IEnumerator AttackCo() {
+        else if (currentState == PlayerState.walk || currentState == PlayerState.idle) {
+            updateAnimationAndMove = true;
+        }
+
+    }
+
+        private IEnumerator AttackCo() {
         animator.SetBool("attacking", true);
         currentState = PlayerState.attack;
         yield return null;
