@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
         if(deathEffect != null) {
             GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(effect, .5f);
-            GameObject coineffect = Instantiate(coin, transform.position + transform.up * -1f, Quaternion.identity);
+            GameObject coineffect = Instantiate(coin, transform.position + transform.up * -0.8f, Quaternion.identity);
             
      
             

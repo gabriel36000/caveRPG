@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public inventory inventory;
     public SpriteRenderer receivedItemSprite;
     public bool updateAnimationAndMove;
+    public Signal playerHit;
    
 
     // Start is called before the first frame update
@@ -101,6 +102,7 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody.MovePosition(transform.position + change * speed * Time.deltaTime);
     }
     private IEnumerator KnockCo( float knockTime) {
+        playerHit.Raise();
         if (myRigidbody != null) {
             yield return new WaitForSeconds(knockTime);
             myRigidbody.velocity = Vector2.zero;

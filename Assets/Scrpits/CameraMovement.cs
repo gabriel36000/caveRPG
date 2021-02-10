@@ -8,9 +8,10 @@ public class CameraMovement : MonoBehaviour
     public float smoothing;
     public Vector2 maxPosition;
     public Vector2 minPosition;
+    public Animator anim;
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -25,5 +26,13 @@ public class CameraMovement : MonoBehaviour
 
 
         }
+    }
+    public void BeginKick() {
+        anim.SetBool("kickActive", true);
+        StartCoroutine(KickCo());
+    }
+    public IEnumerator KickCo() {
+        yield return null;
+        anim.SetBool("kickActive", false);
     }
 }
