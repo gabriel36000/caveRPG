@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     public float moveSpeed;
     public GameObject deathEffect;
     public GameObject coin;
+    public LootTable thisLoot;
 
     private void Awake() {
         health = maxHealth.initialValue;
@@ -39,6 +40,7 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if(health <= 0) {
             DeathEffect();
+            MakeLoot();
             this.gameObject.SetActive(false);
         }
     }
@@ -46,12 +48,15 @@ public class Enemy : MonoBehaviour
         if(deathEffect != null) {
             GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(effect, .5f);
-            GameObject coineffect = Instantiate(coin, transform.position + transform.up * -0.8f, Quaternion.identity);
-            
-     
-            
-            
-            
+        }
+    }
+    private void MakeLoot() {
+        if(thisLoot != null) {
+            PowerUp current = thisLoot.LootPowerup();
+            if(current != null){
+                Instantiate(current.gameObject, transform.position + transform.up * -0.8f, Quaternion.identity);
+                
+            }
         }
     }
     

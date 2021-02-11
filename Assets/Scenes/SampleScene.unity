@@ -800,6 +800,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: -4819349370398869478, guid: ff56f9171066f9e4ea61214829dc16db,
         type: 3}
+      propertyPath: thisLoot
+      value: 
+      objectReference: {fileID: 11400000, guid: 35c489a4aec05004fb1408a5dcd412ea,
+        type: 2}
+    - target: {fileID: -4819349370398869478, guid: ff56f9171066f9e4ea61214829dc16db,
+        type: 3}
       propertyPath: deathEffect
       value: 
       objectReference: {fileID: 694554087568753267, guid: d0a6082fd5e614e458b509b612e621e6,
@@ -1244,6 +1250,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5589102068194889016, guid: 35be7721e00c2fc4cba5fe9ca8ea0cbf,
         type: 3}
+    - target: {fileID: 1662606002421882392, guid: 71449347629aefc408cfcbf38ccfc09e,
+        type: 3}
+      propertyPath: thisLoot
+      value: 
+      objectReference: {fileID: 11400000, guid: 35c489a4aec05004fb1408a5dcd412ea,
+        type: 2}
     - target: {fileID: 1662606002421882392, guid: 71449347629aefc408cfcbf38ccfc09e,
         type: 3}
       propertyPath: deathEffect
@@ -1755,7 +1767,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -1.8419952, y: 0.53030014}
   m_SizeDelta: {x: 0, y: 1.0606}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2702,7 +2714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &918313358
 MonoBehaviour:
   m_ObjectHideFlags: 0
