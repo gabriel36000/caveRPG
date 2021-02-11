@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Slime : Enemy
 {
@@ -10,6 +11,7 @@ public class Slime : Enemy
     public float attackRadius;
     public Transform homePosition;
     public Animator anim;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,8 @@ public class Slime : Enemy
         anim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").transform;
         anim.SetBool("wakeUp", true);
+        
+
 
     }
 
@@ -25,6 +29,7 @@ public class Slime : Enemy
     void FixedUpdate()
     {
         CheckDistance();
+        CurrentHealth();
 
     }
     public virtual void CheckDistance() {
@@ -61,4 +66,5 @@ public class Slime : Enemy
         anim.SetFloat("moveX", setVector.x);
         anim.SetFloat("moveY", setVector.y);
     }
+    
 }

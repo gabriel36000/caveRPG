@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum EnemyState {
     idle,
@@ -19,9 +20,12 @@ public class Enemy : MonoBehaviour
     public GameObject deathEffect;
     public GameObject coin;
     public LootTable thisLoot;
+    public Slider UIhealth;
+    
 
     private void Awake() {
         health = maxHealth.initialValue;
+        UIhealth.maxValue = maxHealth.RunTimeValue;
     }
     public void Knock(Rigidbody2D myRigidbody, float knockTime, float damage) {
         StartCoroutine(KnockCo(myRigidbody, knockTime));
@@ -59,7 +63,8 @@ public class Enemy : MonoBehaviour
             }
         }
     }
-    
+    public void CurrentHealth() {
+        UIhealth.value = health;
+    }
 
-    
 }
