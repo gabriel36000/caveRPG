@@ -1,0 +1,43 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public class Pause : MonoBehaviour
+{
+    private bool isPaused;
+    public GameObject pausePanel;
+    public string mainMenu;
+
+    // Start is called before the first frame update
+    public void Start()
+    {
+        isPaused = false;
+    }
+
+    // Update is called once per frame
+    public void Update()
+    {
+        if (Input.GetButtonDown("pause")) {
+            isPaused = !isPaused;
+            
+            if (isPaused) {
+                pausePanel.SetActive(true);
+                Time.timeScale = 0f;
+            }
+            else {
+                pausePanel.SetActive(false);
+                    Time.timeScale = 1f;
+                
+            }
+        }
+    }
+    public void Resume() {
+        isPaused = !isPaused;
+
+    }
+    public void QuitToMain() {
+        SceneManager.LoadScene(mainMenu);
+    }
+}
