@@ -23,7 +23,12 @@ public class PlayerMovement : MonoBehaviour
     public SpriteRenderer receivedItemSprite;
     public bool updateAnimationAndMove;
     public Signal playerHit;
-   
+    public bool inCombat;
+    private float outOfCombatTimer;
+    private float outOfCombatDelay;
+    [SerializeField] public FloatValue regenAmount;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
         else if (currentState == PlayerState.walk || currentState == PlayerState.idle) {
             updateAnimationAndMove = true;
         }
+        
 
     }
 
@@ -121,4 +127,5 @@ public class PlayerMovement : MonoBehaviour
            
         }
     }
+    
 }

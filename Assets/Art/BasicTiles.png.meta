@@ -110,6 +110,24 @@ TextureImporter:
   - first:
       213: 1424216141333788454
     second: BasicTiles_32
+  - first:
+      213: -1537496139023743733
+    second: BasicTiles_35
+  - first:
+      213: -2049986218068782661
+    second: BasicTiles_37
+  - first:
+      213: 2178260654453481982
+    second: BasicTiles_38
+  - first:
+      213: 4102342144963961853
+    second: BasicTiles_39
+  - first:
+      213: 834540278490388961
+    second: BasicTiles_40
+  - first:
+      213: -6371325234220945235
+    second: BasicTiles_41
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1022,6 +1040,132 @@ TextureImporter:
       bones: []
       spriteID: 627f393e805d3c310800000000000000
       internalID: 1424216141333788454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicTiles_35
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 18
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0584f55867b9aae0800000000000000
+      internalID: -1537496139023743733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicTiles_37
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 35
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb1509d556cfc83e0800000000000000
+      internalID: -2049986218068782661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicTiles_38
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 42
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef1e8e8368cba3e10800000000000000
+      internalID: 2178260654453481982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicTiles_39
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 42
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df3e0b912727ee830800000000000000
+      internalID: 4102342144963961853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicTiles_40
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 59
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e9dc2236f1e49b00800000000000000
+      internalID: 834540278490388961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicTiles_41
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 59
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da037c9c4718497a0800000000000000
+      internalID: -6371325234220945235
       vertices: []
       indices: 
       edges: []
