@@ -12,6 +12,7 @@ public enum PlayerState {
 }
 public class PlayerMovement : MonoBehaviour
 {
+    public ParticleSystem dust;
     public PlayerState currentState;
     public float speed;
     private Rigidbody2D myRigidbody;
@@ -21,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public Signal playerHealthSignal;
     public inventory inventory;
     public SpriteRenderer receivedItemSprite;
-    public bool updateAnimationAndMove;
+    
     public Signal playerHit;
     public bool inCombat;
     private float outOfCombatTimer;
@@ -38,33 +39,36 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
         animator.SetFloat("MoveX", 0);
         animator.SetFloat("MoveY", -1);
-        
+        DistableDust();
+
     }
 
     // Update is called once per frame
     
 
     void FixedUpdate() {
-       if (updateAnimationAndMove) {
-            UpdateAnimationAndMove();
-            updateAnimationAndMove = false;
-        }
-}
-    void Update() {
-        if (currentState == PlayerState.interact) {
-            return;
-        }
+
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-        if (Input.GetButtonDown("attack") && currentState != PlayerState.attack && currentState != PlayerState.stagger) {
-            StartCoroutine(AttackCo());
-        }
-        else if (currentState == PlayerState.walk || currentState == PlayerState.idle) {
-            updateAnimationAndMove = true;
+        if(currentState == PlayerState.walk || currentState == PlayerState.idle) {
+            UpdateAnimationAndMove();
+
         }
         
+    }
+    void Update() {
+       
+        if (currentState == PlayerState.interact) {  
+            return;
+        }
+        if (Input.GetButtonDown("attack") && currentState != PlayerState.attack && currentState != PlayerState.stagger) {
+            StartCoroutine(AttackCo());
+            
 
+
+        }
+                
     }
 
         private IEnumerator AttackCo() {
@@ -92,20 +96,31 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     void UpdateAnimationAndMove() {
+
         if (change != Vector3.zero) {
+            
             MoveCharacter();
             animator.SetFloat("MoveX", change.x);
             animator.SetFloat("MoveY", change.y);
             animator.SetBool("moving", true);
+            CreatDust();
+            
+
         }
 
         else {
+            
             animator.SetBool("moving", false);
+            DistableDust();
+
         }
     }
     void MoveCharacter() {
         change.Normalize();
         myRigidbody.MovePosition(transform.position + change * speed * Time.deltaTime);
+       
+
+
     }
     private IEnumerator KnockCo( float knockTime) {
         playerHit.Raise();
@@ -127,5 +142,15 @@ public class PlayerMovement : MonoBehaviour
            
         }
     }
-    
+    void CreatDust() {
+        if (!dust.isPlaying) {
+            dust.Play();
+        }
+    }
+    void DistableDust() {
+        
+        if (dust.isPlaying) {
+            dust.Stop();
+        }
+    }
 }
